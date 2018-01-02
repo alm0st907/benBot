@@ -6,3 +6,6 @@ http://mike.verdone.ca/twitter/
 
 some api tool notes
 https://github.com/sixohsix/twitter/tree/master
+
+# another potential api, probably the better one
+http://docs.tweepy.org/en/latest/api.html
