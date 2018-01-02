@@ -1,0 +1,3 @@
+from twitter import *
+bot = Twitter( auth=Oauth(537663050-YhA9O5lNU35ws4NBHHEqWgqSZSg1qRlhQu6NWoHY,XWYxwIxNNiSw4Mr7Hg3h6SXdHk3HvMu55piKLcUeqv3kH,yjnGr1oTv8VmQVmf8Mxw4kbwc,X3Gk5ubrslnie6yzwZGD82Hh3jMUioB3O7idFMYNtMBgr8GgGm
+))
