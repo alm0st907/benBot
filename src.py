@@ -23,8 +23,24 @@ def main():
 
   api = get_api(cfg)
 
+ #MEME FLING CHOICE SELECTOR
+  handle="blank_string"
+  status=False
+  while status==False:
+    
+    handle=raw_input("who you tweetin' at: ")
+    if handle == "ben":
+      handle = "@realBenKuttner"
+      status=True
+    elif handle == "ian":
+      handle = "@IanStacks543"
+      status=True
+    else:
+      pass
+ #MEME FLING CHOICE SELECTOR
+
   #more testing
-  tweet = title + '\n' + link + "\nBy Memebot 9000 (wip)\n@realBenKuttner"
+  tweet = title + '\n' + link + "\nBy Memebot 9000 (wip)\n"+handle
   print(tweet)
   
   status = api.update_status(status=tweet) 
