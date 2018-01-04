@@ -8,11 +8,12 @@ def get_api(cfg):
 
 def main():
   # Fill in the values noted in previous step here
+  #this is the memebot account credentials
   cfg = { 
-    "consumer_key"        : "yjnGr1oTv8VmQVmf8Mxw4kbwc",
-    "consumer_secret"     : "X3Gk5ubrslnie6yzwZGD82Hh3jMUioB3O7idFMYNtMBgr8GgGm",
-    "access_token"        : "537663050-YhA9O5lNU35ws4NBHHEqWgqSZSg1qRlhQu6NWoHY",
-    "access_token_secret" : "XWYxwIxNNiSw4Mr7Hg3h6SXdHk3HvMu55piKLcUeqv3kH" 
+    "consumer_key"        : "RzjIudiw6pddHytAJDDRDPxlz",
+    "consumer_secret"     : "3HZNFEvPX1aYgoXYq80GvXTLiAmk3bpiyxKgoIR5IVlAWAJDhA",
+    "access_token"        : "948791438900322304-rO4oAoli6f1aJE0nSVeRZrvGPiMdENO",
+    "access_token_secret" : "sARssRS2gfwAHDQvrzljDeXVtLFkmnYuisux6ZUNStn4S" 
     }
 
 
@@ -36,6 +37,8 @@ def main():
       handle = "@IanStacks543"
       status=True
     else:
+      handle="@alm0st907"
+      status=True
       pass
  #MEME FLING CHOICE SELECTOR
 
