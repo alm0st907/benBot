@@ -7,10 +7,6 @@ consumer_secret = '3HZNFEvPX1aYgoXYq80GvXTLiAmk3bpiyxKgoIR5IVlAWAJDhA'
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True, retry_count=3, retry_delay=60)
 
-
-
-
-
 def get_api(cfg):
   auth = tweepy.OAuthHandler(cfg['consumer_key'], cfg['consumer_secret'])
   auth.set_access_token(cfg['access_token'], cfg['access_token_secret'])
@@ -25,7 +21,6 @@ def get_followers(user_id):
         print 'Getting page {} for followers'.format(page_count)
         users.extend(user)
     return users
-
 
 def main():
   # Fill in the values noted in previous step here
@@ -94,5 +89,3 @@ def main():
 
 if __name__ == "__main__":
   main()
-
-
