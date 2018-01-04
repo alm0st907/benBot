@@ -1,5 +1,5 @@
 import tweepy
-import prawTest
+import reddit #my reddit praw code file
 
 def get_api(cfg):
   auth = tweepy.OAuthHandler(cfg['consumer_key'], cfg['consumer_secret'])
@@ -17,9 +17,9 @@ def main():
     }
 
 
-  #testcode to get the link returned from my praw code
-  link=prawTest.get_link()
-  title=prawTest.get_title()
+  #calls to get the reddit info using praw, see reddit.py for the code
+  link=reddit.get_link()
+  title=reddit.get_title()
   
 
   api = get_api(cfg)
@@ -42,10 +42,11 @@ def main():
       pass
  #MEME FLING CHOICE SELECTOR
 
-  #more testing
+  #Formats the tweet with the pulled title, pulled link, identifies the bot, then throws the @
   tweet = title + '\n' + link + "\nBy Memebot 9000 (wip)\n"+handle
   print(tweet)
   
+  #DROP A TRAIN ON EM EDGAR
   status = api.update_status(status=tweet) 
   # Yes, tweet is called 'status' rather confusing
 
