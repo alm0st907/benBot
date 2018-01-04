@@ -1,4 +1,5 @@
 import tweepy
+import prawTest
 
 def get_api(cfg):
   auth = tweepy.OAuthHandler(cfg['consumer_key'], cfg['consumer_secret'])
@@ -16,8 +17,9 @@ def main():
 
   api = get_api(cfg)
   tweet = "Working on a twitter bot, ignore this tweet\n"+"#boredcoder"
-
-  status = api.update_status(status=tweet) 
+  link=prawTest.get_link()
+  print(link)
+  #status = api.update_status(status=tweet) 
   # Yes, tweet is called 'status' rather confusing
 
 if __name__ == "__main__":
