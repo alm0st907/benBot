@@ -15,11 +15,19 @@ def main():
     "access_token_secret" : "XWYxwIxNNiSw4Mr7Hg3h6SXdHk3HvMu55piKLcUeqv3kH" 
     }
 
-  api = get_api(cfg)
-  tweet = "Working on a twitter bot, ignore this tweet\n"+"#boredcoder"
+
+  #testcode to get the link returned from my praw code
   link=prawTest.get_link()
-  print(link)
-  #status = api.update_status(status=tweet) 
+  title=prawTest.get_title()
+  
+
+  api = get_api(cfg)
+
+  #more testing
+  tweet = title + '\n' + link + "\nBy Memebot 9000 (wip)\n@realBenKuttner"
+  print(tweet)
+  
+  status = api.update_status(status=tweet) 
   # Yes, tweet is called 'status' rather confusing
 
 if __name__ == "__main__":
