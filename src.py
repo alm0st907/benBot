@@ -1,6 +1,7 @@
 import tweepy
 import reddit #my reddit praw code file
 
+
 #need to figure out this code as compared to the get_api code
 consumer_key = 'RzjIudiw6pddHytAJDDRDPxlz'
 consumer_secret = '3HZNFEvPX1aYgoXYq80GvXTLiAmk3bpiyxKgoIR5IVlAWAJDhA'
