@@ -1,10 +1,11 @@
 import tweepy
 import reddit #my reddit praw code file
-
+import credential_config #parsing a ini for the credentials info to keep the code "safe"
 
 #need to figure out this code as compared to the get_api code
-consumer_key = 'RzjIudiw6pddHytAJDDRDPxlz'
-consumer_secret = '3HZNFEvPX1aYgoXYq80GvXTLiAmk3bpiyxKgoIR5IVlAWAJDhA'
+tokensNkeys=credential_config.get_cfg_info()
+consumer_key = tokensNkeys[0]
+consumer_secret = tokensNkeys[1]
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True, retry_count=3, retry_delay=60)
 
@@ -24,13 +25,13 @@ def get_followers(user_id):
     return users
 
 def main():
-  # Fill in the values noted in previous step here
+  #we're pulling this info from the cfg.ini using my config parser code
   #this is the memebot account credentials
   cfg = { 
-    "consumer_key"        : "RzjIudiw6pddHytAJDDRDPxlz",
-    "consumer_secret"     : "3HZNFEvPX1aYgoXYq80GvXTLiAmk3bpiyxKgoIR5IVlAWAJDhA",
-    "access_token"        : "948791438900322304-rO4oAoli6f1aJE0nSVeRZrvGPiMdENO",
-    "access_token_secret" : "sARssRS2gfwAHDQvrzljDeXVtLFkmnYuisux6ZUNStn4S" 
+    "consumer_key"        : tokensNkeys[0],
+    "consumer_secret"     : tokensNkeys[1],
+    "access_token"        : tokensNkeys[2],
+    "access_token_secret" : tokensNkeys[3]
     }
 
 
@@ -64,17 +65,17 @@ def main():
   handle="blank_string"
   status=False
   if status==False:
-    
+    print(" Here's your follower list:"+str(temp.screen_name)+'\n')
     handle=raw_input("who you tweetin' at: ")
     if handle == "ben":
-      handle = "@realBenKuttner"
-      status=True
+      handle = "realBenKuttner"
+      status = True
     elif handle == "ian":
-      handle = "@IanStacks543"
-      status=True
+      handle = "IanStacks543"
+      status = True
     elif handle == temp.screen_name:#handling other names
-        handle='@'+temp.screen_name
-        status=True
+        handle = temp.screen_name
+        status = True
     else:
       pass
  #MEME FLING CHOICE SELECTOR
