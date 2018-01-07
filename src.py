@@ -63,7 +63,7 @@ def main():
  #MEME FLING CHOICE SELECTOR
   handle="blank_string"
   status=False
-  while status==False:
+  if status==False:
     
     handle=raw_input("who you tweetin' at: ")
     if handle == "ben":
@@ -72,9 +72,10 @@ def main():
     elif handle == "ian":
       handle = "@IanStacks543"
       status=True
-    else:
-      if handle == temp.screen_name: #checking if the name matches the temp
+    elif handle == temp.screen_name:#handling other names
+        handle='@'+temp.screen_name
         status=True
+    else:
       pass
  #MEME FLING CHOICE SELECTOR
 
@@ -82,10 +83,14 @@ def main():
   tweet = title + '\n' + link + "\nBy Memebot 9000 (wip)\n"+'@'+handle
 
   #just a debug line of code, see what the tweet is
-  #print(tweet)
+  print(tweet)
   
   #DROP A TRAIN ON EM EDGAR
-  status = bot.update_status(status=tweet) 
+  if status==True:
+    status = bot.update_status(status=tweet) 
+  else:
+    print("No tweet, you're just api testing")
+    pass
   # Yes, tweet is called 'status' rather confusing
 
 if __name__ == "__main__":
