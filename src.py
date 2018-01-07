@@ -20,7 +20,8 @@ def get_followers(user_id):
     page_count = 0
     for user in tweepy.Cursor(api.followers, id=user_id, count=200).pages():
         page_count += 1
-        print 'Getting page {} for followers'.format(page_count)
+        #im gunna try commenting out the print to see if that speeds up anythong
+        #print 'Getting page {} for followers'.format(page_count)
         users.extend(user)
     return users
 
@@ -62,10 +63,12 @@ def main():
   handle="blank_string"
   status=False
   if status==False:
-    print(" Here's your follower list:\n")
+    print("Here's your follower list:\n")
 
     for i in range(len(name_list)):
       print(name_list[i])
+
+    print('\n')
 
     handle=raw_input("who you tweetin' at: ")
     if handle == "ben":
@@ -80,7 +83,7 @@ def main():
     else:
       pass
  #MEME FLING CHOICE SELECTOR
-
+  print('\n')
   #Formats the tweet with the pulled title, pulled link, identifies the bot, then throws the @
   tweet = title + '\n' + link + "\nBy Memebot 9000 (wip)\n"+'@'+handle
 
