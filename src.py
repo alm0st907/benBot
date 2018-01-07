@@ -39,7 +39,6 @@ def main():
   link=reddit.get_link()
   title=reddit.get_title()
   
-
   bot = get_api(cfg)
 
   #WIP code
@@ -47,25 +46,27 @@ def main():
   #user = myUser.id
   user=myUser.id
   
-  #just prints user id
-  #print(user)
 
   follower_list=[]
   #gets a list of users
   follower_list=get_followers(user)
 
-  #pop off a user object 
-  temp=follower_list.pop()
-
-  #access the screen name of a user object
-  #print(temp.screen_name)
-  
-
+  #this chunk of code goes through our list of followers, rips their usernames
+  #and then adds it to a list of just usernames to make it more easily usable
+  #if this bot actually catches on this might be pretty slow
+  name_list = []
+  for i in range(len(follower_list)):
+      name_list.append(follower_list[i].screen_name)
+ 
  #MEME FLING CHOICE SELECTOR
   handle="blank_string"
   status=False
   if status==False:
-    print(" Here's your follower list:"+str(temp.screen_name)+'\n')
+    print(" Here's your follower list:\n")
+
+    for i in range(len(name_list)):
+      print(name_list[i])
+
     handle=raw_input("who you tweetin' at: ")
     if handle == "ben":
       handle = "realBenKuttner"
@@ -73,8 +74,8 @@ def main():
     elif handle == "ian":
       handle = "IanStacks543"
       status = True
-    elif handle == temp.screen_name:#handling other names
-        handle = temp.screen_name
+    elif handle in name_list:#handling other names
+        handle = handle
         status = True
     else:
       pass
