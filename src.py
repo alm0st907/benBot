@@ -54,7 +54,8 @@ def main():
 
   follower_list=[]
   #gets a list of users
-  follower_list=get_followers(user)
+  get_followers()
+  #follower_list=get_followers(user)
 
   #this chunk of code goes through our list of followers, rips their usernames
   #and then adds it to a list of just usernames to make it more easily usable

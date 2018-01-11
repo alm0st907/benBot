@@ -62,7 +62,7 @@ def fill_posts():
     
     for i in range(3,100):
         post = postData() #temp holder for the post
-        submission = submissions_list.submissions.next() #grab first sub
+        submission = submissions_list.next() #grab first sub
 
         #shove the data
         post.links = submission.shortlink
@@ -72,9 +72,9 @@ def fill_posts():
         tweets.append(post)
 
         #iterate
-        submission=submissions.next()
+        submission=submissions_list.next()
 
     #testcode for accessing
     print(tweets[0].links +'\n'+tweets[0].titles+'\n')
 
-    return tweets
+    #return tweets
