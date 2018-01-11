@@ -72,7 +72,7 @@ def fill_posts():
         tweets.append(post)
 
         #iterate
-        submission=submissions_list.next()
+        
 
     #testcode for accessing
     print(tweets[0].links +'\n'+tweets[0].titles+'\n')

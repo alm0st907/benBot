@@ -41,6 +41,10 @@ def main():
   posts = []
 
   posts = reddit.fill_posts()
+  
+  #this dont work yet
+  #print(posts[1].tweets.link+'\n'+posts[1].tweets.title+'\n')
+
   link=reddit.get_link()
   title=reddit.get_title()
   
@@ -54,8 +58,7 @@ def main():
 
   follower_list=[]
   #gets a list of users
-  get_followers()
-  #follower_list=get_followers(user)
+  follower_list=get_followers(user)
 
   #this chunk of code goes through our list of followers, rips their usernames
   #and then adds it to a list of just usernames to make it more easily usable
