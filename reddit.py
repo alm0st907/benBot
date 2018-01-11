@@ -77,4 +77,4 @@ def fill_posts():
     #testcode for accessing
     print(tweets[0].links +'\n'+tweets[0].titles+'\n')
 
-    #return tweets
+    return tweets

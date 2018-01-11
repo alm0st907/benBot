@@ -3,7 +3,7 @@ import reddit #my reddit praw code file
 import credential_config #parsing a ini for the credentials info to keep the code "safe"
 
 #need to figure out this code as compared to the get_api code
-tokensNkeys=credential_config.get_cfg_info()
+tokensNkeys = credential_config.get_cfg_info()
 consumer_key = tokensNkeys[0]
 consumer_secret = tokensNkeys[1]
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
@@ -37,11 +37,13 @@ def main():
 
 
   #calls to get the reddit info using praw, see reddit.py for the code
-
-  posts = []
-
-  posts = reddit.fill_posts()
   
+  #this stuff works now
+  posts = reddit.fill_posts()
+  temp  =posts[2]
+  
+  
+  print(temp.titles+'\n'+temp.links)
   #this dont work yet
   #print(posts[1].tweets.link+'\n'+posts[1].tweets.title+'\n')
 
