@@ -37,6 +37,10 @@ def main():
 
 
   #calls to get the reddit info using praw, see reddit.py for the code
+
+  posts = []
+
+  posts = reddit.fill_posts()
   link=reddit.get_link()
   title=reddit.get_title()
   
