@@ -1,5 +1,6 @@
 import praw
 
+#works and does not need to be modified further to the best of my knowledge
 class postData:
     #this is a 'struct' that will hold all the data of possible tweets. I can add post structs into a list to pull from later
     titles = ""
@@ -7,6 +8,7 @@ class postData:
     posted = False
 
 #simple function to return a reddit link. Useable by the twitterbot to @ some fire at @ the homies
+#DEPRECIATED, NO LONGER NECESSARY
 def get_link():
     bot = praw.Reddit(user_agent='ben_bot',client_id='GJQk28rd1Bp-DA',client_secret='rjofYTFzwpodjztC0PJU0-TRipI',username='',password='')
 
@@ -28,7 +30,8 @@ def get_link():
     #print("success")
     return submission.shortlink
 
-#gets the title of the post on reddit
+#gets the title of the post on reddit /r dankmemes
+#DEPRECIATED, NO LONGER NECESSARY
 def get_title():
     bot = praw.Reddit(user_agent='ben_bot',client_id='GJQk28rd1Bp-DA',client_secret='rjofYTFzwpodjztC0PJU0-TRipI',username='',password='')
 
@@ -51,7 +54,8 @@ def get_title():
     return submission.title
     
 def fill_posts():
-    bot = praw.Reddit(user_agent='ben_bot',client_id='GJQk28rd1Bp-DA',client_secret='rjofYTFzwpodjztC0PJU0-TRipI',username='',password='')
+    #basic initialization, not sure how to change it yet
+    bot = praw.Reddit(user_agent='ben_bot',client_id='GJQk28rd1Bp-DA',client_secret='rjofYTFzwpodjztC0PJU0-TRipI',username='',password='') #Ill clean this out soon
 
     subreddit = bot.subreddit('dankmemes')
 
@@ -59,10 +63,15 @@ def fill_posts():
 
     tweets = [] #gunna store all the post data in here
 
+    #just gunna call this twice instead of adding a loop, get to the non sticked posts first
+    submission = submissions_list.next()
+    submission = submissions_list.next()
+    #it is indeed the right ammount of iteration
     
+    #loop works as intended
     for i in range(3,100):
         post = postData() #temp holder for the post
-        submission = submissions_list.next() #grab first sub
+        submission = submissions_list.next() #grab first non sticked post by iterating at this point to the third position in dankmemes
 
         #shove the data
         post.links = submission.shortlink
@@ -71,10 +80,8 @@ def fill_posts():
         #append to list
         tweets.append(post)
 
-        #iterate
-        
-
     #testcode for accessing
-    print(tweets[0].links +'\n'+tweets[0].titles+'\n')
+    #print(tweets[0].links +'\n'+tweets[0].titles+'\n')
+    #it works so its no longer really needed
 
     return tweets
