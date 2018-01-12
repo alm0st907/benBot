@@ -1,6 +1,7 @@
-import tweepy
+import tweepy #twitter api
 import reddit #my reddit praw code file
 import credential_config #parsing a ini for the credentials info to keep the code "safe"
+import random #using this for random post choices
 
 #need to figure out this code as compared to the get_api code
 tokensNkeys = credential_config.get_cfg_info()
@@ -40,7 +41,7 @@ def main():
   
   #this stuff works now
   posts = reddit.fill_posts() #posts is a 'array' of posts pulled from the reddit code
-  temp  =posts[2]
+  temp  = posts[2]
   
   #this test code works and can be ignored now
   #print(temp.titles+'\n'+temp.links)
