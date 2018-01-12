@@ -39,23 +39,25 @@ def main():
   #calls to get the reddit info using praw, see reddit.py for the code
   
   #this stuff works now
-  posts = reddit.fill_posts()
+  posts = reddit.fill_posts() #posts is a 'array' of posts pulled from the reddit code
   temp  =posts[2]
   
-  
-  print(temp.titles+'\n'+temp.links)
+  #this test code works and can be ignored now
+  #print(temp.titles+'\n'+temp.links)
   #this dont work yet
-  #print(posts[1].tweets.link+'\n'+posts[1].tweets.title+'\n')
-
+  
+  #once I get the list call working i can remove this
   link=reddit.get_link()
   title=reddit.get_title()
   
+  #api config call?
   bot = get_api(cfg)
 
   #WIP code
   myUser=bot.me()
   #user = myUser.id
   user=myUser.id
+
   
 
   follower_list=[]
