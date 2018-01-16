@@ -2,7 +2,8 @@ import ConfigParser #import library
 
 def get_cfg_info():
     parse = ConfigParser.ConfigParser()
-    parse.read('cfg.ini') #template file will show you how to make your own and then fill in with the actual credentials
+    parse.read('cfg.ini') 
+    #template file will show you how to make your own and then fill in with the actual credentials
 
     #make a section in brackets
     #print parse.get('info','test') 
@@ -26,4 +27,4 @@ def get_cfg_info():
     cfg=(ckey,cskey,atoken,astoken,r_agent,cl_id,cl_sec,usr_name,password)
     return cfg
 
-    #print cfg[0] #prints ckey from the tuple
+#print cfg[0] #prints ckey from the tuple
