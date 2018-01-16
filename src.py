@@ -11,9 +11,9 @@ auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True, retry_count=3, retry_delay=60)
 
 def get_api(cfg):
-  auth = tweepy.OAuthHandler(cfg['consumer_key'], cfg['consumer_secret'])
-  auth.set_access_token(cfg['access_token'], cfg['access_token_secret'])
-  return tweepy.API(auth)
+    auth = tweepy.OAuthHandler(cfg['consumer_key'], cfg['consumer_secret'])
+    auth.set_access_token(cfg['access_token'], cfg['access_token_secret'])
+    return tweepy.API(auth)
 
 #this is code ripped from a stackex post, no idea if it works yet
 def get_followers(user_id):
@@ -29,86 +29,86 @@ def get_followers(user_id):
 def main():
   #we're pulling this info from the cfg.ini using my config parser code
   #this is the memebot account credentials
-  cfg = { 
-    "consumer_key"        : tokensNkeys[0],
-    "consumer_secret"     : tokensNkeys[1],
-    "access_token"        : tokensNkeys[2],
-    "access_token_secret" : tokensNkeys[3]
+    cfg = {
+      "consumer_key"        : tokensNkeys[0],
+      "consumer_secret"     : tokensNkeys[1],
+      "access_token"        : tokensNkeys[2],
+      "access_token_secret" : tokensNkeys[3]
     }
     
   #calls to get the reddit info using praw, see reddit.py for the code
   
   #this stuff works now
-  posts = reddit.fill_posts() #posts is a 'array' of posts pulled from the reddit code
-  temp  = posts[2]
+    posts = reddit.fill_posts() #posts is a 'array' of posts pulled from the reddit code
+    temp  = posts[2]
   
   #this test code works and can be ignored now
   #print(temp.titles+'\n'+temp.links)
   #this dont work yet
   
   #once I get the list call working i can remove this
-  link=reddit.get_link()
-  title=reddit.get_title()
+    link=reddit.get_link()
+    title=reddit.get_title()
   
-  #api config call?
-  bot = get_api(cfg)
+    #api config call?
+    bot = get_api(cfg)
 
-  #WIP code
-  myUser=bot.me()
-  #user = myUser.id
-  user=myUser.id
+    #WIP code
+    myUser=bot.me()
+    #user = myUser.id
+    user=myUser.id
 
-  
 
-  follower_list=[]
-  #gets a list of users
-  follower_list=get_followers(user)
 
-  #this chunk of code goes through our list of followers, rips their usernames
-  #and then adds it to a list of just usernames to make it more easily usable
-  #if this bot actually catches on this might be pretty slow
-  name_list = []
-  for i in range(len(follower_list)):
-      name_list.append(follower_list[i].screen_name)
+    follower_list=[]
+    #gets a list of users
+    follower_list=get_followers(user)
+
+    #this chunk of code goes through our list of followers, rips their usernames
+    #and then adds it to a list of just usernames to make it more easily usable
+    #if this bot actually catches on this might be pretty slow
+    name_list = []
+    for i in range(len(follower_list)):
+        name_list.append(follower_list[i].screen_name)
  
  #MEME FLING CHOICE SELECTOR
-  handle="blank_string"
-  status=False
-  if status==False:
-    print("Here's your follower list:\n")
+    handle="blank_string"
+    status=False
+    if status==False:
+        print("Here's your follower list:\n")
 
     for i in range(len(name_list)):
-      print(name_list[i])
+        print(name_list[i])
 
     print('\n')
 
     handle=raw_input("who you tweetin' at: ")
     if handle == "ben":
-      handle = "realBenKuttner"
-      status = True
+        handle = "realBenKuttner"
+        status = True
     elif handle == "ian":
-      handle = "IanStacks543"
-      status = True
+        handle = "IanStacks543"
+        status = True
     elif handle in name_list:#handling other names
         handle = handle
         status = True
     else:
-      pass
- #MEME FLING CHOICE SELECTOR
-  print('\n')
-  #Formats the tweet with the pulled title, pulled link, identifies the bot, then throws the @
-  tweet = title + '\n' + link + "\nBy Memebot 9000 (wip)\n"+'@'+handle
+        pass
+    #MEME FLING CHOICE SELECTOR
+    print('\n')
+    #Formats the tweet with the pulled title, pulled link, identifies the bot, then throws the @
+    tweet = title + '\n' + link + "\nBy Memebot 9000 (wip)\n"+'@'+handle
 
-  #just a debug line of code, see what the tweet is
-  print(tweet)
-  
-  #DROP A TRAIN ON EM EDGAR
-  if status==True:
+    #just a debug line of code, see what the tweet is
+    print(tweet)
+
+    #DROP A TRAIN ON EM EDGAR
+    if status==True:
     status = bot.update_status(status=tweet) 
-  else:
+    else:
     print("No tweet, you're just api testing")
     pass
-  # Yes, tweet is called 'status' rather confusing
+    # Yes, tweet is called 'status' rather confusing
 
 if __name__ == "__main__":
   main()
