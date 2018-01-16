@@ -1,4 +1,5 @@
 import praw
+import credential_config
 
 #works and does not need to be modified further to the best of my knowledge
 class postData:
@@ -10,7 +11,10 @@ class postData:
 #simple function to return a reddit link. Useable by the twitterbot to @ some fire at @ the homies
 #DEPRECIATED, NO LONGER NECESSARY
 def get_link():
-    bot = praw.Reddit(user_agent='ben_bot',client_id='GJQk28rd1Bp-DA',client_secret='rjofYTFzwpodjztC0PJU0-TRipI',username='',password='')
+    credentials = credential_config.get_cfg_info()
+    bot = praw.Reddit(user_agent= credentials[4],client_id= credentials[5],client_secret= credentials[6],username=credentials[7],password=credentials)
+    subreddit = bot.subreddit('dankmemes')
+
 
     #code returns hot 100 posts()
     subreddit = bot.subreddit('dankmemes')
@@ -33,7 +37,8 @@ def get_link():
 #gets the title of the post on reddit /r dankmemes
 #DEPRECIATED, NO LONGER NECESSARY
 def get_title():
-    bot = praw.Reddit(user_agent='ben_bot',client_id='GJQk28rd1Bp-DA',client_secret='rjofYTFzwpodjztC0PJU0-TRipI',username='',password='')
+    credentials = credential_config.get_cfg_info()
+    bot = praw.Reddit(user_agent= credentials[4],client_id= credentials[5],client_secret= credentials[6],username=credentials[7],password=credentials)
 
     #code returns hot 100 posts()
     subreddit = bot.subreddit('dankmemes')
@@ -55,8 +60,8 @@ def get_title():
     
 def fill_posts():
     #basic initialization, not sure how to change it yet
-    bot = praw.Reddit(user_agent='ben_bot',client_id='GJQk28rd1Bp-DA',client_secret='rjofYTFzwpodjztC0PJU0-TRipI',username='',password='') #Ill clean this out soon
-
+    credentials = credential_config.get_cfg_info()
+    bot = praw.Reddit(user_agent= credentials[4],client_id= credentials[5],client_secret= credentials[6],username=credentials[7],password=credentials)
     subreddit = bot.subreddit('dankmemes')
 
     submissions_list= subreddit.hot(limit = 100)

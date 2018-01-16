@@ -35,8 +35,7 @@ def main():
     "access_token"        : tokensNkeys[2],
     "access_token_secret" : tokensNkeys[3]
     }
-
-
+    
   #calls to get the reddit info using praw, see reddit.py for the code
   
   #this stuff works now

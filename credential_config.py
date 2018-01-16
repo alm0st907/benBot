@@ -9,11 +9,21 @@ def get_cfg_info():
 
     #I could add this data all in to a tuple/structure of some sort, or make multiple functions. I havent decided
 
+    #twitter info parse
     ckey = parse.get('info','consumer_key')
     cskey = parse.get('info','consumer_secret')
     atoken = parse.get('info','access_token')
     astoken = parse.get('info','access_token_secret')
-    cfg=(ckey,cskey,atoken,astoken)
+
+    #reddit info parse
+    r_agent = parse.get('reddit','u_agent')
+    cl_id = parse.get('reddit','cl_id')
+    cl_sec = parse.get('reddit','cl_sec') 
+    usr_name = parse.get('reddit','usr_name')
+    password = parse.get('reddit','password')
+
+
+    cfg=(ckey,cskey,atoken,astoken,r_agent,cl_id,cl_sec,usr_name,password)
     return cfg
 
     #print cfg[0] #prints ckey from the tuple
