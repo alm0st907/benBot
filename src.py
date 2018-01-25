@@ -30,10 +30,10 @@ def main():
   #we're pulling this info from the cfg.ini using my config parser code
   #this is the memebot account credentials
     cfg = {
-      "consumer_key"        : tokensNkeys[0],
-      "consumer_secret"     : tokensNkeys[1],
-      "access_token"        : tokensNkeys[2],
-      "access_token_secret" : tokensNkeys[3]
+        "consumer_key"        : tokensNkeys[0],
+        "consumer_secret"     : tokensNkeys[1],
+        "access_token"        : tokensNkeys[2],
+        "access_token_secret" : tokensNkeys[3]
     }
     
   #calls to get the reddit info using praw, see reddit.py for the code
@@ -47,8 +47,8 @@ def main():
   #this dont work yet
   
   #once I get the list call working i can remove this
-    link=reddit.get_link()
-    title=reddit.get_title()
+    link = reddit.get_link()
+    title = reddit.get_title()
   
     #api config call?
     bot = get_api(cfg)
@@ -95,20 +95,19 @@ def main():
     else:
         pass
     #MEME FLING CHOICE SELECTOR
-    print('\n')
+    print '\n'
     #Formats the tweet with the pulled title, pulled link, identifies the bot, then throws the @
     tweet = title + '\n' + link + "\nBy Memebot 9000 (wip)\n"+'@'+handle
 
     #just a debug line of code, see what the tweet is
-    print(tweet)
+    print tweet
 
     #DROP A TRAIN ON EM EDGAR
-    if status==True:
-        status = bot.update_status(status=tweet) 
+    if status == True:
+        status = bot.update_status(status=tweet)
     else:
-        print("No tweet, you're just api testing")
-    pass
+        print "No tweet, you're just api testing"
     # Yes, tweet is called 'status' rather confusing
 
 if __name__ == "__main__":
-  main()
+    main()
