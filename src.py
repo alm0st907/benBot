@@ -40,7 +40,7 @@ def main():
   
   #this stuff works now
     posts = reddit.fill_posts() #posts is a 'array' of posts pulled from the reddit code
-    temp  = posts[2]
+    temp = posts[2]
   
   #this test code works and can be ignored now
   #print(temp.titles+'\n'+temp.links)
@@ -54,9 +54,9 @@ def main():
     bot = get_api(cfg)
 
     #WIP code
-    myUser=bot.me()
+    myUser = bot.me()
     #user = myUser.id
-    user=myUser.id
+    user = myUser.id
 
 
 
@@ -78,11 +78,11 @@ def main():
         print "Here's your follower list:\n"
 
     for i in range(len(name_list)):
-        print(name_list[i])
+        print name_list[i]
 
-    print('\n')
+    print '\n'
 
-    handle=raw_input("who you tweetin' at: ")
+    handle = raw_input("who you tweetin' at: ")
     if handle == "ben":
         handle = "realBenKuttner"
         status = True
