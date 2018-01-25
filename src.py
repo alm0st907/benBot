@@ -70,12 +70,12 @@ def main():
     name_list = []
     for i in range(len(follower_list)):
         name_list.append(follower_list[i].screen_name)
- 
+
  #MEME FLING CHOICE SELECTOR
-    handle="blank_string"
-    status=False
-    if status==False:
-        print("Here's your follower list:\n")
+    handle = "blank_string"
+    status = False
+    if status == False:
+        print "Here's your follower list:\n"
 
     for i in range(len(name_list)):
         print(name_list[i])
