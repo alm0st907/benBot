@@ -104,9 +104,9 @@ def main():
 
     #DROP A TRAIN ON EM EDGAR
     if status==True:
-    status = bot.update_status(status=tweet) 
+        status = bot.update_status(status=tweet) 
     else:
-    print("No tweet, you're just api testing")
+        print("No tweet, you're just api testing")
     pass
     # Yes, tweet is called 'status' rather confusing
 
