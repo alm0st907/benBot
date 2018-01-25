@@ -1,7 +1,8 @@
+import random #using this for random post choices later on
 import tweepy #twitter api
 import reddit #my reddit praw code file
 import credential_config #parsing a ini for the credentials info to keep the code "safe"
-import random #using this for random post choices
+
 
 #need to figure out this code as compared to the get_api code
 tokensNkeys = credential_config.get_cfg_info()
@@ -80,6 +81,7 @@ def main():
     for i in range(len(name_list)):
         print name_list[i]
 
+    print "Shortcut names: ian or ben"
     print '\n'
 
     handle = raw_input("who you tweetin' at: ")
