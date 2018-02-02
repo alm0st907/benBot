@@ -27,6 +27,17 @@ def get_followers(user_id):
         users.extend(user)
     return users
 
+#this should return a list of people the bot follows
+def get_following(user_id):
+    users = []
+    page_count = 0
+    for user in tweepy.Cursor(api.friends, id=user_id, count=200).pages():
+        page_count += 1
+        #im gunna try commenting out the print to see if that speeds up anythong
+        #print 'Getting page {} for followers'.format(page_count)
+        users.extend(user)
+    return users
+
 def main():
   #we're pulling this info from the cfg.ini using my config parser code
   #this is the memebot account credentials
@@ -62,8 +73,10 @@ def main():
 
 
     follower_list=[]
+    following_list=[]
     #gets a list of users
-    follower_list=get_followers(user)
+    follower_list = get_followers(user)
+    following_list = get_following(user)
 
     #this chunk of code goes through our list of followers, rips their usernames
     #and then adds it to a list of just usernames to make it more easily usable
@@ -71,6 +84,10 @@ def main():
     name_list = []
     for i in range(len(follower_list)):
         name_list.append(follower_list[i].screen_name)
+
+    friend_list=[]
+    for i in range(len(following_list)):
+        friend_list.append(following_list[i].screen_name)
 
  #MEME FLING CHOICE SELECTOR
     handle = "blank_string"
@@ -80,6 +97,12 @@ def main():
 
     for i in range(len(name_list)):
         print name_list[i]
+    
+    print '\n'
+
+    for i in range(len(friend_list)):
+        print friend_list[i]
+        
 
     print "Shortcut names: ian or ben"
     print '\n'
@@ -91,7 +114,7 @@ def main():
     elif handle == "ian":
         handle = "IanStacks543"
         status = True
-    elif handle in name_list:#handling other names
+    elif handle in name_list or friend_list:#handling other names
         handle = handle
         status = True
     else:
