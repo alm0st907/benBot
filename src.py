@@ -2,6 +2,7 @@ import random #using this for random post choices later on
 import tweepy #twitter api
 import reddit #my reddit praw code file
 import credential_config #parsing a ini for the credentials info to keep the code "safe"
+#this program uses python 2.7 and the "uses print statement" error can be ignored for now
 
 
 #need to figure out this code as compared to the get_api code
