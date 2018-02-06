@@ -134,6 +134,12 @@ def main():
     else:
         print "No tweet, you're just api testing"
     # Yes, tweet is called 'status' rather confusing
+    redo_choice = raw_input("Do you want to tweet again? (y or n) : ")
+    if redo_choice.upper() == "Y":
+        main()
+
+
+    
 
 if __name__ == "__main__":
     main()
