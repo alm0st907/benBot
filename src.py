@@ -55,10 +55,6 @@ def main():
     posts = reddit.fill_posts() #posts is a 'array' of posts pulled from the reddit code
     #temp = posts[2]
   
-    #accessing post titles/arrays from temp
- 
-
-  
     #once I get the list call working i can remove this
     to_be_tweeted = random.choice(posts)
     link = to_be_tweeted.links
@@ -94,21 +90,21 @@ def main():
     handle = "blank_string"
     status = False
     if status == False:
-        print "Here's your follower list:\n"
+        print("Here's your follower list:\n")
 
     for i in range(len(name_list)):
-        print (str(i) + ": " + name_list[i])
+        print(str(i) + ": " + name_list[i])
     
-    print '\n'
+    print('\n')
 
     for i in range(len(friend_list)):
         print (str(i) + ": " + friend_list[i])
         
 
-    print "Shortcut names: ian or ben"
-    print '\n'
+    print("Shortcut names: ian or ben")
+    print('\n')
 
-    print "Here's your tweet: \n"
+    print("Here's your tweet: \n")
     print(to_be_tweeted.titles + "\n" + to_be_tweeted.links+"\n")
 
     handle = raw_input("who you tweetin' at: ")
@@ -125,25 +121,22 @@ def main():
         status = False
         
     #MEME FLING CHOICE SELECTOR
-    print '\n'
+    print('\n')
     #Formats the tweet with the pulled title, pulled link, identifies the bot, then throws the @
     tweet = title + '\n' + link + "\nBy Memebot 9000 (wip)\n"+'@'+handle
 
     #just a debug line of code, see what the tweet is
-    print tweet
+    print(tweet)
 
     #DROP A TRAIN ON EM EDGAR
     if status == True:
         status = bot.update_status(status=tweet)
     else:
-        print "No tweet, you're just api testing"
+        print("No tweet, you're just api testing")
     # Yes, tweet is called 'status' rather confusing
     redo_choice = raw_input("Do you want to tweet again? (y or n) : ")
     if redo_choice.upper() == "Y":
         main()
-    
-
-
     
 
 if __name__ == "__main__":
