@@ -49,21 +49,22 @@ def main():
         "access_token_secret" : tokensNkeys[3]
     }
     
-  #calls to get the reddit info using praw, see reddit.py for the code
+    #calls to get the reddit info using praw, see reddit.py for the code
   
-  #this stuff works now
+    #this stuff works now
     posts = reddit.fill_posts() #posts is a 'array' of posts pulled from the reddit code
     #temp = posts[2]
   
-  #accessing post titles/arrays from temp
+    #accessing post titles/arrays from temp
  
 
   
-  #once I get the list call working i can remove this
+    #once I get the list call working i can remove this
     to_be_tweeted = random.choice(posts)
     link = to_be_tweeted.links
     title = to_be_tweeted.titles
-    print(to_be_tweeted.titles + "\n" + to_be_tweeted.links)
+    #print(to_be_tweeted.titles + "\n" + to_be_tweeted.links)
+
     #api config call?
     bot = get_api(cfg)
 
