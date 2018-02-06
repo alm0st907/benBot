@@ -55,9 +55,9 @@ def main():
     posts = reddit.fill_posts() #posts is a 'array' of posts pulled from the reddit code
     temp = posts[2]
   
-  #this test code works and can be ignored now
-  #print(temp.titles+'\n'+temp.links)
-  #this dont work yet
+  #accessing post titles/arrays from temp
+  #print(temp.titles + "\n" + temp.links)
+
   
   #once I get the list call working i can remove this
     link = reddit.get_link()
