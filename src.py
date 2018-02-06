@@ -114,7 +114,7 @@ def main():
     elif handle == "ian":
         handle = "IanStacks543"
         status = True
-    elif handle in name_list or friend_list:#handling other names
+    elif handle in (name_list or friend_list):#handling other names
         handle = handle
         status = True
     else:
