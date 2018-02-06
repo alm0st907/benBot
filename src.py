@@ -63,7 +63,7 @@ def main():
     to_be_tweeted = random.choice(posts)
     link = to_be_tweeted.links
     title = to_be_tweeted.titles
-    #print(to_be_tweeted.titles + "\n" + to_be_tweeted.links)
+    
 
     #api config call?
     bot = get_api(cfg)
@@ -97,16 +97,19 @@ def main():
         print "Here's your follower list:\n"
 
     for i in range(len(name_list)):
-        print name_list[i]
+        print (str(i) + ": " + name_list[i])
     
     print '\n'
 
     for i in range(len(friend_list)):
-        print friend_list[i]
+        print (str(i) + ": " + friend_list[i])
         
 
     print "Shortcut names: ian or ben"
     print '\n'
+
+    print "Here's your tweet: \n"
+    print(to_be_tweeted.titles + "\n" + to_be_tweeted.links+"\n")
 
     handle = raw_input("who you tweetin' at: ")
     if handle == "ben":
