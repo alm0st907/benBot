@@ -53,16 +53,17 @@ def main():
   
   #this stuff works now
     posts = reddit.fill_posts() #posts is a 'array' of posts pulled from the reddit code
-    temp = posts[2]
+    #temp = posts[2]
   
   #accessing post titles/arrays from temp
-  #print(temp.titles + "\n" + temp.links)
+ 
 
   
   #once I get the list call working i can remove this
-    link = reddit.get_link()
-    title = reddit.get_title()
-  
+    to_be_tweeted = random.choice(posts)
+    link = to_be_tweeted.links
+    title = to_be_tweeted.titles
+    print(to_be_tweeted.titles + "\n" + to_be_tweeted.links)
     #api config call?
     bot = get_api(cfg)
 
@@ -70,8 +71,6 @@ def main():
     myUser = bot.me()
     #user = myUser.id
     user = myUser.id
-
-
 
     follower_list=[]
     following_list=[]
@@ -119,7 +118,8 @@ def main():
         handle = handle
         status = True
     else:
-        pass
+        status = False
+        
     #MEME FLING CHOICE SELECTOR
     print '\n'
     #Formats the tweet with the pulled title, pulled link, identifies the bot, then throws the @
@@ -137,6 +137,7 @@ def main():
     redo_choice = raw_input("Do you want to tweet again? (y or n) : ")
     if redo_choice.upper() == "Y":
         main()
+    
 
 
     
