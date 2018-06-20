@@ -107,7 +107,7 @@ def main():
     print("Here's your tweet: \n")
     print(to_be_tweeted.titles + "\n" + to_be_tweeted.links+"\n")
 
-    handle = raw_input("who you tweetin' at: ")
+    handle = input("who you tweetin' at: ")
     if handle == "ben":
         handle = "realBenKuttner"
         status = True
@@ -134,7 +134,7 @@ def main():
     else:
         print("No tweet, you're just api testing")
     # Yes, tweet is called 'status' rather confusing
-    redo_choice = raw_input("Do you want to tweet again? (y or n) : ")
+    redo_choice = input("Do you want to tweet again? (y or n) : ")
     if redo_choice.upper() == "Y":
         main()
     

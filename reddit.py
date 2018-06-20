@@ -24,7 +24,7 @@ def get_link():
 
     #iterates to the next submission; submission is a given data type?
     #starts with the first post,loop ieratres to the 3rd post
-    i=0
+    #i=0
     for i in range(0,3):
         submission=submissions.next()
 
@@ -48,7 +48,7 @@ def get_title():
 
     #iterates to the next submission; submission is a given data type?
     #starts with the first post,loop ieratres to the 3rd post
-    i=0
+    #i=0
     for i in range(0,3):
         submission = submissions.next()
 
