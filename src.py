@@ -53,18 +53,24 @@ def main():
   
     #this stuff works now
     posts = reddit.fill_posts() #posts is a 'array' of posts pulled from the reddit code
+
     #temp = posts[2]
-  
+
+    # for thing in posts:
+    #     print(thing.titles)
     #once I get the list call working i can remove this
     to_be_tweeted = random.choice(posts)
+
+
     link = to_be_tweeted.links
     title = to_be_tweeted.titles
     
-
+    
     #api config call?
     bot = get_api(cfg)
 
     #WIP code
+    
     myUser = bot.me()
     #user = myUser.id
     user = myUser.id

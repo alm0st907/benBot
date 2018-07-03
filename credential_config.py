@@ -1,8 +1,9 @@
 #import ConfigParser #import library
 import configparser #import library
+
 def get_cfg_info():
     parse = configparser.ConfigParser()
-    parse.read('cfg.ini')
+    parse.read('config.ini')
     #template file will show you how to make your own and then fill in with the actual credentials
 
     #make a section in brackets

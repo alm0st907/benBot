@@ -77,10 +77,12 @@ def fill_posts():
     for i in range(3,100):
         post = postData() #temp holder for the post
         submission = submissions_list.next() #grab first non sticked post by iterating at this point to the third position in dankmemes
-
+    
         #shove the data
         post.links = submission.shortlink
         post.titles = submission.title
+        #print(post.links)
+        #print(post.titles)
 
         #append to list
         tweets.append(post)
