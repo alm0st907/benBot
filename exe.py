@@ -138,10 +138,10 @@ def main():
         else:
             print("No tweet, you're just api testing")
         # Yes, tweet is called 'status' rather confusing
-        exit_status = raw_input("Do you want to tweet again? :")
+        exit_status = raw_input("Do you want to tweet again? : ")
         exit_status = exit_status.upper()
         if exit_status == "Y":
-            if raw_input("Do you want a new tweet?")== "y":
+            if raw_input("Do you want a new tweet? : ")== "y":
                 to_be_tweeted = random.choice(posts)
                 link = to_be_tweeted.links
                 title = to_be_tweeted.titles
